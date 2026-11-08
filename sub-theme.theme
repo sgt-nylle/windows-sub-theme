@@ -1,0 +1,76 @@
+; =============================================================================
+; Sub Theme (Gotland Navy) for Windows 11
+; Ported from https://github.com/sgt-nylle/omarchy-sub-theme
+; Swedish Navy (Kungliga Flottan) · HSwMS Gotland (A19) · Cold War Bluedark
+; =============================================================================
+
+[Theme]
+DisplayName=Sub Theme (Gotland Navy)
+ThemeId={6B89A54A-19A1-4F7C-9E38-BDF807162C01}
+
+[Control Panel\Desktop]
+Wallpaper=backgrounds\01-stockholm-archipelago-night-patrol.png
+TileWallpaper=0
+WallpaperStyle=10
+Pattern=
+
+[VisualStyles]
+Path=%SystemRoot%\resources\Themes\Aero\Aero.msstyles
+ColorStyle=NormalColor
+Size=NormalSize
+AutoColorization=0
+; ARGB hex (0xAARRGGBB): Tactical Navy Selection (#164682) with Periscope Cyan (#38BDF8) DWM accent
+ColorizationColor=0XC4164682
+SystemMode=Dark
+AppMode=Dark
+VisualStyleVersion=10
+
+[Control Panel\Colors]
+; RGB triplets extracted directly from omarchy-sub-theme/colors.toml
+; background = #07162c (7 22 44) | dark_background = #040e1d (4 14 29)
+; lighter_background = #0f2b52 (15 43 82) | selection = #164682 (22 70 130)
+; accent/cyan = #38bdf8 (56 189 248) | foreground = #e2eeff (226 238 255)
+; muted = #5b82b8 (91 130 184) | hairline = #1b457d (27 69 125)
+ActiveBorder=27 69 125
+ActiveTitle=15 43 82
+AppWorkspace=4 14 29
+Background=7 22 44
+ButtonAlternateFace=15 43 82
+ButtonDkShadow=2 8 18
+ButtonFace=7 22 44
+ButtonHilight=27 69 125
+ButtonLight=15 43 82
+ButtonShadow=4 14 29
+ButtonText=226 238 255
+GradientActiveTitle=22 70 130
+GradientInactiveTitle=7 22 44
+GrayText=91 130 184
+Hilight=22 70 130
+HilightText=248 251 255
+HotTrackingColor=56 189 248
+InactiveBorder=4 14 29
+InactiveTitle=7 22 44
+InactiveTitleText=91 130 184
+InfoText=226 238 255
+InfoWindow=4 14 29
+Menu=7 22 44
+MenuBar=7 22 44
+MenuHilight=22 70 130
+MenuText=226 238 255
+Scrollbar=15 43 82
+TitleText=248 251 255
+Window=7 22 44
+WindowFrame=27 69 125
+WindowText=226 238 255
+
+[Slideshow]
+Interval=1800000
+Shuffle=0
+ImagesRootPath=backgrounds
+Item0Path=backgrounds\01-stockholm-archipelago-night-patrol.png
+Item1Path=backgrounds\02-hms-gotland-tactical-blueprint.png
+Item2Path=backgrounds\03-baltic-sonar-silent-running.png
+Item3Path=backgrounds\04-dawn-torpedo-run.png
+
+[MasterThemeSelector]
+MTSM=RJSPBS

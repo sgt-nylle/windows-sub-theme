@@ -1,0 +1,23 @@
+{
+  "name": "Sub Theme",
+  "background": "#07162C",
+  "foreground": "#E2EEFF",
+  "cursorColor": "#F8FBFF",
+  "selectionBackground": "#164682",
+  "black": "#040E1D",
+  "red": "#FF5C5C",
+  "green": "#34D399",
+  "yellow": "#FECC02",
+  "blue": "#5494F7",
+  "purple": "#A78BFA",
+  "cyan": "#38BDF8",
+  "white": "#E2EEFF",
+  "brightBlack": "#5B82B8",
+  "brightRed": "#FF8585",
+  "brightGreen": "#4ADE80",
+  "brightYellow": "#FDE047",
+  "brightBlue": "#82B5FF",
+  "brightPurple": "#C4B5FD",
+  "brightCyan": "#67E8F9",
+  "brightWhite": "#F8FBFF"
+}
