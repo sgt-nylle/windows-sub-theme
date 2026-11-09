@@ -167,7 +167,9 @@ Or manually via Windows 11 GUI:
 
 ## Attribution & Related Projects
 
+- **Discord Community:** [https://discord.gg/9uXbaunJb](https://discord.gg/9uXbaunJb)
 - **Original Linux / Omarchy Theme:** [`sgt-nylle/omarchy-sub-theme`](https://github.com/sgt-nylle/omarchy-sub-theme)
+- **macOS Port:** [`sgt-nylle/macos-sub-theme`](https://github.com/sgt-nylle/macos-sub-theme)
 - **SubWrite (Submarine Typing Game):** [https://subwrite.se](https://subwrite.se) ([`sgt-nylle/subwrite`](https://github.com/sgt-nylle/subwrite))
 - **TechTools:** [https://techtools.subwrite.se](https://techtools.subwrite.se) ([`sgt-nylle/techtools`](https://github.com/sgt-nylle/techtools))
 - **License:** [MIT License](LICENSE) — Created by [sgt-nylle](https://github.com/sgt-nylle).
