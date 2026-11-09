@@ -167,9 +167,7 @@ Or manually via Windows 11 GUI:
 
 ## Attribution & Related Projects
 
-- **Matrix Community Room (`#subwrite:subwrite.se`):** [https://chat.subwrite.se/#/room/#subwrite:subwrite.se](https://chat.subwrite.se/#/room/#subwrite:subwrite.se) (or via [matrix.to](https://matrix.to/#/#subwrite:subwrite.se))
 - **Original Linux / Omarchy Theme:** [`sgt-nylle/omarchy-sub-theme`](https://github.com/sgt-nylle/omarchy-sub-theme)
-- **macOS Port:** [`sgt-nylle/macos-sub-theme`](https://github.com/sgt-nylle/macos-sub-theme)
 - **SubWrite (Submarine Typing Game):** [https://subwrite.se](https://subwrite.se) ([`sgt-nylle/subwrite`](https://github.com/sgt-nylle/subwrite))
 - **TechTools:** [https://techtools.subwrite.se](https://techtools.subwrite.se) ([`sgt-nylle/techtools`](https://github.com/sgt-nylle/techtools))
 - **License:** [MIT License](LICENSE) — Created by [sgt-nylle](https://github.com/sgt-nylle).
