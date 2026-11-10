@@ -173,3 +173,11 @@ Or manually via Windows 11 GUI:
 - **SubWrite (Submarine Typing Game):** [https://subwrite.se](https://subwrite.se) ([`sgt-nylle/subwrite`](https://github.com/sgt-nylle/subwrite))
 - **TechTools:** [https://techtools.subwrite.se](https://techtools.subwrite.se) ([`sgt-nylle/techtools`](https://github.com/sgt-nylle/techtools))
 - **License:** [MIT License](LICENSE) — Created by [sgt-nylle](https://github.com/sgt-nylle).
+
+---
+
+### ⚓ Design & Aesthetic Notes
+The visual identity, naming conventions, and UI themes across this project are inspired by vintage Swedish naval and maritime defense computing aesthetics (cold-war CRT telemetry, green/amber phosphors, sonar consoles). 
+
+This is purely a stylistic and retro-computing design choice. The project has no official affiliation with the Swedish Armed Forces (Försvarsmakten) or any military organization.
+
