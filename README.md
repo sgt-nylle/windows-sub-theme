@@ -2,7 +2,7 @@
 
 **Swedish Navy (*Kungliga Flottan*) · HSwMS Gotland (A19) · Cold War Bluedark, Sonar Cyan & Swedish Gold — for Windows 11.**
 
-A native, zero-patch **Windows 11** & **Windows Terminal** port of [`sgt-nylle/omarchy-sub-theme`](https://github.com/sgt-nylle/omarchy-sub-theme), inspired by [SubWrite](https://subwrite.se), [TechTools](https://techtools.subwrite.se), Sweden's **Gotland-class (A19) Stirling AIP submarine (`HSwMS Gotland`)**, and classic Cold War submarine cinema (*The Hunt for Red October*).
+A native, zero-patch **Windows 11** & **Windows Terminal** port of [`sgt-nylle/omarchy-sub-theme`](https://github.com/sgt-nylle/omarchy-sub-theme), inspired by [SubWrite](https://subwrite.se), [TechTools](https://techtools.subwrite.se), Sweden's **Gotland-class (A19) Stirling AIP submarine (`HSwMS Gotland`)**, and clean naval acoustics and submarine operations.
 
 > [!NOTE]
 > **No system file patching (`uxtheme`) or third-party background daemons required.**
@@ -54,7 +54,7 @@ Switch between any of the **4 included `2736×1824` Cold War bluedark wallpapers
 ```powershell
 # 1 = Stockholm Archipelago Night Departure (Default)
 # 2 = HSwMS Gotland Naval Intelligence Blueprint
-# 3 = Baltic Thermocline — Silent Running (Hunt for Red October Vibe)
+# 3 = Baltic Thermocline — Silent Running (Clean Tactical Vibe)
 # 4 = Periscope Convoy Torpedo Salvo (Cold War Bluedark Twilight)
 powershell -ExecutionPolicy Bypass -Scope Process -File .\apply-theme.ps1 -WallpaperIndex 3
 ```
@@ -80,7 +80,7 @@ Double-click **`sub-theme.theme`** in File Explorer. Windows 11 will open **Sett
         <img src="backgrounds/02-hms-gotland-tactical-blueprint.png" alt="02 — HSwMS Gotland Naval Intelligence Blueprint" width="100%">
       </a>
       <br><b>02 · HSwMS Gotland (A19) Naval Intelligence Blueprint</b>
-      <br>Deep bluedark naval engineering &amp; intelligence plate with internal torpedo reload skids, battery &amp; Stirling AIP compartments, escape trunks, acoustic polar signature rose, a ghosted Cold War Project 941 Typhoon (<i>Red October</i>, 175 m) scale comparison profile, and three cross-sections.
+      <br>Deep bluedark naval engineering &amp; intelligence plate with internal torpedo reload skids, battery &amp; Stirling AIP compartments, escape trunks, acoustic polar signature rose, a ghosted Cold War Project 941 Typhoon (175 m) scale comparison profile, and three cross-sections.
     </td>
   </tr>
   <tr>
@@ -88,7 +88,7 @@ Double-click **`sub-theme.theme`** in File Explorer. Windows 11 will open **Sett
       <a href="backgrounds/03-baltic-sonar-silent-running.png">
         <img src="backgrounds/03-baltic-sonar-silent-running.png" alt="03 — Baltic Thermocline Silent Running" width="100%">
       </a>
-      <br><b>03 · Baltic Thermocline — Silent Running (<i>Hunt for Red October</i> Vibe)</b>
+      <br><b>03 · Baltic Thermocline — Silent Running (Clean Tactical Vibe)</b>
       <br>Deep abyssal bluedark cat-and-mouse scene below the halocline: <i>HSwMS Gotland</i> in full anechoic-tiled stealth trim with red-rigged conn windows and CSU 90-2 flank hydrophone staves pinging a massive Project 941 Typhoon-class submarine lurking in the distant sonar shadow.
     </td>
     <td width="50%" align="center">
@@ -112,7 +112,7 @@ Double-click **`sub-theme.theme`** in File Explorer. Windows 11 will open **Sett
 | **Darker Background** | Window Shadow | `#020812` | `2, 8, 18` | Keel Black-Navy Scrim |
 | **Elevated Surface** | `StartColorMenu` | `#0F2B52` | `15, 43, 82` | Elevated Navy Card / Taskbar Tint |
 | **Selection / Active DWM** | `selectionBackground` / `AccentColor` | `#164682` | `22, 70, 130` | Tactical Navy Selection & Active Frame |
-| **Frame Hairline** | `ActiveBorder` | `#1B457D` | `27, 69, 125` | C64 Navy Frame Hairline |
+| **Frame Hairline** | `ActiveBorder` | `#1B457D` | `27, 69, 125` | Clean Navy Frame Hairline |
 | **Primary Accent** | `cyan` / `HotTrackingColor` | `#38BDF8` | `56, 189, 248` | Periscope & Sonar Telemetry Cyan |
 | **Bright Cyan** | `brightCyan` | `#67E8F9` | `103, 232, 249` | Active Hydrophone Pulse Cyan |
 | **Foreground** | `foreground` / `white` | `#E2EEFF` | `226, 238, 255` | Crisp Naval Readout White-Blue |
