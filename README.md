@@ -44,13 +44,17 @@ cd windows-sub-theme
 ```
 
 ### Option A: PowerShell One-Liner (Recommended)
-Applies Dark Mode, exact DWM active/inactive window border & taskbar colors, downloads all **5 `2736×1824` wallpapers** to `Pictures\Sub-Theme` (so you can also pick any of them in **Settings → Personalization → Background**), sets the selected wallpaper live without signing out, and automatically injects the `"Sub Theme"` color scheme into **Windows Terminal** (`settings.json`):
+Applies Dark Mode, exact DWM active/inactive window border & taskbar colors, downloads all **5 `2736×1824` wallpapers** to `Pictures\Sub-Theme` (so you can also pick any of them in **Settings → Personalization → Background**), sets the selected wallpaper live without signing out, and automatically injects the `"Sub Theme"` color scheme into **Windows Terminal** (`settings.json`).
+
+**Default (wallpaper 1):**
 
 ```powershell
-# Remote one-liner (no git clone required)
 irm https://raw.githubusercontent.com/sgt-nylle/windows-sub-theme/main/apply-theme.ps1 | iex
+```
 
-# Remote one-liner with parameters (e.g. wallpaper 5 — Xmas Periscope Edition)
+**With parameters (e.g. wallpaper 5 — Xmas Periscope Edition + set Windows Terminal default):**
+
+```powershell
 & ([scriptblock]::Create((irm https://raw.githubusercontent.com/sgt-nylle/windows-sub-theme/main/apply-theme.ps1))) -WallpaperIndex 5 -SetAsDefaultTerminalScheme
 ```
 
@@ -58,12 +62,16 @@ Or if you cloned the repo locally:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -Scope Process -File .\apply-theme.ps1 -SetAsDefaultTerminalScheme
+```
 
-# 1 = Stockholm Archipelago Night Departure (Default)
-# 2 = HSwMS Gotland Naval Intelligence Blueprint
-# 3 = Baltic Thermocline — Silent Running (Clean Tactical Vibe)
-# 4 = Periscope Convoy Torpedo Salvo (Cold War Bluedark Twilight)
-# 5 = Baltic Xmas Periscope Patrol (Holiday Edition)
+Switch wallpaper locally (`1`–`5`):
+- `1` = Stockholm Archipelago Night Departure (Default)
+- `2` = HSwMS Gotland Naval Intelligence Blueprint
+- `3` = Baltic Thermocline — Silent Running (Clean Tactical Vibe)
+- `4` = Periscope Convoy Torpedo Salvo (Cold War Bluedark Twilight)
+- `5` = Baltic Xmas Periscope Patrol (Holiday Edition)
+
+```powershell
 powershell -ExecutionPolicy Bypass -Scope Process -File .\apply-theme.ps1 -WallpaperIndex 5
 ```
 
