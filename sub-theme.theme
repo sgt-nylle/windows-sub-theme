@@ -71,6 +71,7 @@ Item0Path=backgrounds\01-stockholm-archipelago-night-patrol.png
 Item1Path=backgrounds\02-hms-gotland-tactical-blueprint.png
 Item2Path=backgrounds\03-baltic-sonar-silent-running.png
 Item3Path=backgrounds\04-dawn-torpedo-run.png
+Item4Path=backgrounds\05-xmas-periscope-patrol.png
 
 [MasterThemeSelector]
 MTSM=RJSPBS

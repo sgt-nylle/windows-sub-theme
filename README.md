@@ -22,7 +22,8 @@ windows-sub-theme/
 │   ├── 01-stockholm-archipelago-night-patrol.png   # Default: Surfaced Cold War bluedark night patrol
 │   ├── 02-hms-gotland-tactical-blueprint.png       # Naval intelligence & engineering blueprint
 │   ├── 03-baltic-sonar-silent-running.png          # Silent running below the Baltic halocline
-│   └── 04-dawn-torpedo-run.png                     # Attack periscope convoy torpedo salvo
+│   ├── 04-dawn-torpedo-run.png                     # Attack periscope convoy torpedo salvo
+│   └── 05-xmas-periscope-patrol.png                # Holiday edition: Santa hat on periscope
 ├── apply-theme.ps1                                 # Non-admin PowerShell installer & rollback script
 ├── sub-theme.theme                                 # Native Windows 11 double-clickable .theme file
 ├── windows-terminal-scheme.json                    # Standalone Windows Terminal scheme snippet
@@ -43,28 +44,35 @@ cd windows-sub-theme
 ```
 
 ### Option A: PowerShell One-Liner (Recommended)
-Applies Dark Mode, exact DWM active/inactive window border & taskbar colors, sets the wallpaper live without signing out, and automatically injects the `"Sub Theme"` color scheme into **Windows Terminal** (`settings.json`):
+Applies Dark Mode, exact DWM active/inactive window border & taskbar colors, downloads all **5 `2736×1824` wallpapers** to `Pictures\Sub-Theme` (so you can also pick any of them in **Settings → Personalization → Background**), sets the selected wallpaper live without signing out, and automatically injects the `"Sub Theme"` color scheme into **Windows Terminal** (`settings.json`):
+
+```powershell
+# Remote one-liner (no git clone required)
+irm https://raw.githubusercontent.com/sgt-nylle/windows-sub-theme/main/apply-theme.ps1 | iex
+
+# Remote one-liner with parameters (e.g. wallpaper 5 — Xmas Periscope Edition)
+& ([scriptblock]::Create((irm https://raw.githubusercontent.com/sgt-nylle/windows-sub-theme/main/apply-theme.ps1))) -WallpaperIndex 5 -SetAsDefaultTerminalScheme
+```
+
+Or if you cloned the repo locally:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -Scope Process -File .\apply-theme.ps1 -SetAsDefaultTerminalScheme
-```
 
-Switch between any of the **4 included `2736×1824` Cold War bluedark wallpapers** at any time:
-
-```powershell
 # 1 = Stockholm Archipelago Night Departure (Default)
 # 2 = HSwMS Gotland Naval Intelligence Blueprint
 # 3 = Baltic Thermocline — Silent Running (Clean Tactical Vibe)
 # 4 = Periscope Convoy Torpedo Salvo (Cold War Bluedark Twilight)
-powershell -ExecutionPolicy Bypass -Scope Process -File .\apply-theme.ps1 -WallpaperIndex 3
+# 5 = Baltic Xmas Periscope Patrol (Holiday Edition)
+powershell -ExecutionPolicy Bypass -Scope Process -File .\apply-theme.ps1 -WallpaperIndex 5
 ```
 
 ### Option B: Native `.theme` File (Double-Click)
-Double-click **`sub-theme.theme`** in File Explorer. Windows 11 will open **Settings → Personalization → Themes**, switch both `SystemMode` and `AppMode` to `Dark`, apply the Gotland Navy `ColorizationColor` (`#164682`), and configure the 4-wallpaper desktop slideshow.
+Double-click **`sub-theme.theme`** in File Explorer. Windows 11 will open **Settings → Personalization → Themes**, switch both `SystemMode` and `AppMode` to `Dark`, apply the Gotland Navy `ColorizationColor` (`#164682`), and configure the 5-wallpaper desktop slideshow.
 
 ---
 
-## Four Included Cold War Bluedark Wallpapers (`2736×1824`)
+## Five Included Cold War Bluedark Wallpapers (`2736×1824`)
 
 <table>
   <tr>
@@ -97,6 +105,15 @@ Double-click **`sub-theme.theme`** in File Explorer. Windows 11 will open **Sett
       </a>
       <br><b>04 · Periscope Convoy Torpedo Salvo (Cold War Bluedark Twilight)</b>
       <br>Attack periscope view in moody Cold War bluedark twilight with optical lens condensation droplets and stadia rangefinding crosshairs locked onto a 4-ship naval surface group as a two-torpedo <i>Torped 62</i> salvo streaks submerged beneath the dark-blue swell.
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+      <a href="backgrounds/05-xmas-periscope-patrol.png">
+        <img src="backgrounds/05-xmas-periscope-patrol.png" alt="05 — Baltic Xmas Periscope Patrol" width="50%">
+      </a>
+      <br><b>05 · Baltic Xmas Periscope Patrol (Holiday Edition)</b>
+      <br><i>HSwMS Gotland</i> at periscope depth beneath the calm Baltic Sea on a snowy winter night, sporting a festive red-and-white Santa hat perched on the attack periscope against a starry sky, silver-blue moon, and distant archipelago cabin glow.
     </td>
   </tr>
 </table>

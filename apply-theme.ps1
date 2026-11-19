@@ -15,11 +15,12 @@
       injects the 16-color "Sub Theme" ANSI scheme into settings.json (with backup).
 
 .PARAMETER WallpaperIndex
-    Selects which of the 4 included Gotland-class wallpapers to set (1 to 4, default: 1):
+    Selects which of the 5 included Gotland-class wallpapers to set (1 to 5, default: 1):
       1 = 01-stockholm-archipelago-night-patrol.png (Default)
       2 = 02-hms-gotland-tactical-blueprint.png
       3 = 03-baltic-sonar-silent-running.png
       4 = 04-dawn-torpedo-run.png
+      5 = 05-xmas-periscope-patrol.png (Xmas Periscope Edition)
 
 .PARAMETER WallpaperStyle
     Desktop fit mode: Fill (default), Fit, Center, or Span.
@@ -40,7 +41,7 @@
 
 [CmdletBinding()]
 param(
-    [ValidateRange(1, 4)]
+    [ValidateRange(1, 5)]
     [int]$WallpaperIndex = 1,
 
     [ValidateSet('Fill', 'Fit', 'Center', 'Span')]
@@ -219,22 +220,53 @@ catch {
     exit 1
 }
 
-# ── 3. Set Desktop Wallpaper Immediately via user32.dll ─────────────────────
+# ── 3. Sync All Wallpapers to Pictures\Sub-Theme & Set Desktop Wallpaper ────
 try {
+    $RepoRawUrl = 'https://raw.githubusercontent.com/sgt-nylle/windows-sub-theme/main'
     $WallpaperFiles = @(
         '01-stockholm-archipelago-night-patrol.png',
         '02-hms-gotland-tactical-blueprint.png',
         '03-baltic-sonar-silent-running.png',
-        '04-dawn-torpedo-run.png'
+        '04-dawn-torpedo-run.png',
+        '05-xmas-periscope-patrol.png'
     )
+
+    $PicturesDir = [Environment]::GetFolderPath('MyPictures')
+    if ([string]::IsNullOrWhiteSpace($PicturesDir)) {
+        $PicturesDir = Join-Path $env:USERPROFILE 'Pictures'
+    }
+    $WallpaperDir = Join-Path $PicturesDir 'Sub-Theme'
+    if (-not (Test-Path -LiteralPath $WallpaperDir)) {
+        New-Item -Path $WallpaperDir -ItemType Directory -Force | Out-Null
+    }
+
+    try {
+        [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
+    } catch { }
+
+    $LocalBgDir = if ($PSScriptRoot) { Join-Path $PSScriptRoot 'backgrounds' } else { $null }
+    Write-Step "Syncing all $($WallpaperFiles.Count) Sub Theme wallpapers to $WallpaperDir..."
+    foreach ($wf in $WallpaperFiles) {
+        $DestPath = Join-Path $WallpaperDir $wf
+        $LocalSrc = if ($LocalBgDir) { Join-Path $LocalBgDir $wf } else { $null }
+        if ($LocalSrc -and (Test-Path -LiteralPath $LocalSrc)) {
+            Copy-Item -LiteralPath $LocalSrc -Destination $DestPath -Force
+        }
+        elseif (-not (Test-Path -LiteralPath $DestPath) -or (Get-Item -LiteralPath $DestPath).Length -eq 0) {
+            $Url = "$RepoRawUrl/backgrounds/$wf"
+            Invoke-WebRequest -Uri $Url -OutFile $DestPath -UseBasicParsing
+        }
+    }
+    Write-Ok "All $($WallpaperFiles.Count) wallpapers ready in $WallpaperDir (Settings -> Personalization -> Background)."
+
     $SelectedFile = $WallpaperFiles[$WallpaperIndex - 1]
-    $WallpaperPath = Join-Path $PSScriptRoot (Join-Path 'backgrounds' $SelectedFile)
+    $WallpaperPath = Join-Path $WallpaperDir $SelectedFile
 
     if (-not (Test-Path -LiteralPath $WallpaperPath)) {
         throw "Wallpaper asset not found at: $WallpaperPath"
     }
 
-    Write-Step "Applying wallpaper [$WallpaperIndex/4]: $SelectedFile ($WallpaperStyle)..."
+    Write-Step "Applying wallpaper [$WallpaperIndex/$($WallpaperFiles.Count)]: $SelectedFile ($WallpaperStyle)..."
 
     $DesktopPath = 'HKCU:\Control Panel\Desktop'
     $StyleCode = switch ($WallpaperStyle) {
@@ -356,6 +388,7 @@ catch {
 Write-Host ""
 Write-Host "========================================================================" -ForegroundColor DarkCyan
 Write-Host "  Sub Theme (Gotland Navy) applied to Windows 11!" -ForegroundColor Cyan
-Write-Host "  - Cycle wallpapers : .\apply-theme.ps1 -WallpaperIndex 2 (1..4)" -ForegroundColor Gray
+Write-Host "  - Wallpapers saved : $WallpaperDir" -ForegroundColor Gray
+Write-Host "  - Cycle wallpapers : .\apply-theme.ps1 -WallpaperIndex 5 (1..5)" -ForegroundColor Gray
 Write-Host "  - Revert to default: .\apply-theme.ps1 -Revert" -ForegroundColor Gray
 Write-Host "========================================================================" -ForegroundColor DarkCyan
