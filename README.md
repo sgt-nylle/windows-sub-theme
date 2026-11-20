@@ -36,15 +36,8 @@ windows-sub-theme/
 
 ## Quick Start
 
-Clone or download this repository anywhere on your Windows 11 machine:
-
-```powershell
-git clone https://github.com/sgt-nylle/windows-sub-theme.git
-cd windows-sub-theme
-```
-
 ### Option A: PowerShell One-Liner (Recommended)
-Applies Dark Mode, exact DWM active/inactive window border & taskbar colors, downloads all **5 `2736×1824` wallpapers** to `Pictures\Sub-Theme` (so you can also pick any of them in **Settings → Personalization → Background**), sets the selected wallpaper live without signing out, and automatically injects the `"Sub Theme"` color scheme into **Windows Terminal** (`settings.json`).
+No `git clone` required, and safe to re-run at any time — it smoothly updates your `Pictures\Sub-Theme` wallpapers (all **5 `2736×1824`** images), applies Dark Mode and DWM colors, sets the selected wallpaper live without signing out, and injects the `"Sub Theme"` color scheme into **Windows Terminal** (`settings.json`).
 
 **Default (wallpaper 1):**
 
@@ -58,7 +51,15 @@ irm https://raw.githubusercontent.com/sgt-nylle/windows-sub-theme/main/apply-the
 & ([scriptblock]::Create((irm https://raw.githubusercontent.com/sgt-nylle/windows-sub-theme/main/apply-theme.ps1))) -WallpaperIndex 5 -SetAsDefaultTerminalScheme
 ```
 
-Or if you cloned the repo locally:
+### Option B: Clone & Run Locally (or Native `.theme` File)
+If you prefer a local copy (if the `windows-sub-theme` folder already exists, run `git pull` inside it instead of `git clone`):
+
+```powershell
+git clone https://github.com/sgt-nylle/windows-sub-theme.git
+cd windows-sub-theme
+```
+
+Apply locally:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -Scope Process -File .\apply-theme.ps1 -SetAsDefaultTerminalScheme
@@ -75,8 +76,7 @@ Switch wallpaper locally (`1`–`5`):
 powershell -ExecutionPolicy Bypass -Scope Process -File .\apply-theme.ps1 -WallpaperIndex 5
 ```
 
-### Option B: Native `.theme` File (Double-Click)
-Double-click **`sub-theme.theme`** in File Explorer. Windows 11 will open **Settings → Personalization → Themes**, switch both `SystemMode` and `AppMode` to `Dark`, apply the Gotland Navy `ColorizationColor` (`#164682`), and configure the 5-wallpaper desktop slideshow.
+Or double-click **`sub-theme.theme`** in File Explorer. Windows 11 will open **Settings → Personalization → Themes**, switch both `SystemMode` and `AppMode` to `Dark`, apply the Gotland Navy `ColorizationColor` (`#164682`), and configure the 5-wallpaper desktop slideshow.
 
 ---
 

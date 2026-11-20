@@ -1,4 +1,4 @@
-﻿<#
+<#
 .SYNOPSIS
     Applies the "Sub Theme (Gotland Navy)" to Windows 11 and Windows Terminal
     without requiring administrator privileges or system file patching.
@@ -55,7 +55,7 @@ param(
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
-# ── Win32 P/Invoke for Immediate Wallpaper Refresh ──────────────────────────
+# -- Win32 P/Invoke for Immediate Wallpaper Refresh --------------------------
 $Win32WallpaperDef = @"
 using System;
 using System.Runtime.InteropServices;
@@ -112,7 +112,7 @@ function Set-RegistryValue {
     New-ItemProperty -LiteralPath $Path -Name $Name -Value $Value -PropertyType $Type -Force | Out-Null
 }
 
-# ── Rollback / Revert Handler ───────────────────────────────────────────────
+# -- Rollback / Revert Handler -----------------------------------------------
 if ($Revert) {
     try {
         Write-Step "Reverting Windows 11 Personalize & DWM settings to standard defaults..."
@@ -150,7 +150,7 @@ if ($Revert) {
     }
 }
 
-# ── 1. Enable Windows 11 Dark Mode (System + Apps) ──────────────────────────
+# -- 1. Enable Windows 11 Dark Mode (System + Apps) --------------------------
 try {
     Write-Step "Configuring Windows 11 Dark Mode & Taskbar Accent..."
     $PersonalizePath = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize'
@@ -167,7 +167,7 @@ catch {
     exit 1
 }
 
-# ── 2. Set DWM & Explorer Accent Colors (Gotland Navy + Periscope Cyan) ─────
+# -- 2. Set DWM & Explorer Accent Colors (Gotland Navy + Periscope Cyan) -----
 try {
     Write-Step "Applying Gotland Navy & Periscope Cyan DWM Accent Colors..."
     $DwmPath    = 'HKCU:\Software\Microsoft\Windows\DWM'
@@ -220,7 +220,7 @@ catch {
     exit 1
 }
 
-# ── 3. Sync All Wallpapers to Pictures\Sub-Theme & Set Desktop Wallpaper ────
+# -- 3. Sync All Wallpapers to Pictures\Sub-Theme & Set Desktop Wallpaper ----
 try {
     $RepoRawUrl = 'https://raw.githubusercontent.com/sgt-nylle/windows-sub-theme/main'
     $WallpaperFiles = @(
@@ -301,7 +301,7 @@ catch {
     exit 1
 }
 
-# ── 4. Inject "Sub Theme" Color Scheme into Windows Terminal ────────────────
+# -- 4. Inject "Sub Theme" Color Scheme into Windows Terminal ----------------
 try {
     Write-Step "Checking for Windows Terminal installation..."
 
